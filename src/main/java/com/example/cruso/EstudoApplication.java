@@ -1,13 +1,13 @@
-package com.example.cruso1;
+package com.example.cruso;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Crurso1Application {
+public class EstudoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Crurso1Application.class, args);
+		SpringApplication.run(EstudoApplication.class, args);
 	}
 
 }

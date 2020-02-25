@@ -1,10 +1,10 @@
-package com.example.cruso1;
+package com.example.cruso;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Crurso1ApplicationTests {
+class EstudoApplicationTests {
 
 	@Test
 	void contextLoads() {

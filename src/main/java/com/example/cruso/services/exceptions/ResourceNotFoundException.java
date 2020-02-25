@@ -1,11 +1,11 @@
-package com.example.cruso1.services.exceptions;
+package com.example.cruso.services.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
 
-	
 	private static final long serialVersionUID = 1L;
-
+	
 	public ResourceNotFoundException(Object id) {
-		super ("Resource not found. id "+ id);
+		super ("Resouce nott foundd meu erro. Id = " + id);		
 	}
+
 }

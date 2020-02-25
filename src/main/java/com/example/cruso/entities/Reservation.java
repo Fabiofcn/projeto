@@ -1,36 +1,36 @@
-package com.example.cruso1.entities;
+package com.example.cruso.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
-@Table(name = "tb_produto")
-public class Produto implements Serializable {
- //fabio
+@Table(name = "tb_reservation" )
+public class Reservation implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
-	private String preco;
-	private Integer estoque;
+	private int roomNumber;
+	private Instant checkIn;
+	private Instant checout;
 	
-	public Produto() {
+	public Reservation() {
 		
 	}
 
-	public Produto(Long id, String nome, String preco, Integer estoque) {
+	public Reservation(Long id,int roomNumber, Instant checkIn, Instant checout) {
 		super();
 		this.id = id;
-		this.nome = nome;
-		this.preco = preco;
-		this.estoque = estoque;
+		this.roomNumber = roomNumber;
+		this.checkIn = checkIn;
+		this.checout = checout;
 	}
 
 	public Long getId() {
@@ -41,28 +41,28 @@ public class Produto implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public int getRoomNumber() {
+		return roomNumber;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setRoomNumber(int roomNumber) {
+		this.roomNumber = roomNumber;
 	}
 
-	public String getPreco() {
-		return preco;
+	public Instant getCheckIn() {
+		return checkIn;
 	}
 
-	public void setPreco(String preco) {
-		this.preco = preco;
+	public void setCheckIn(Instant checkIn) {
+		this.checkIn = checkIn;
 	}
 
-	public Integer getEstoque() {
-		return estoque;
+	public Instant getChecout() {
+		return checout;
 	}
 
-	public void setEstoque(Integer estoque) {
-		this.estoque = estoque;
+	public void setChecout(Instant checout) {
+		this.checout = checout;
 	}
 
 	@Override
@@ -81,7 +81,7 @@ public class Produto implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produto other = (Produto) obj;
+		Reservation other = (Reservation) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -89,6 +89,8 @@ public class Produto implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 
 	
 }
