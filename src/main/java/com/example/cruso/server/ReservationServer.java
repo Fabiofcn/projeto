@@ -25,8 +25,15 @@ public class ReservationServer {
 		return obj.orElseThrow(()-> new ResourceNotFoundException(id));
 	}
 	
-	public Reservation duration(Reservation id) {		
-		return repo.save(id);		
+	public Reservation duration(Reservation id) {
+		int value = id.getCheckIn().compareTo(id.getChecout());
+		
+			if (value < 0)
+				return repo.save(id);
+			else
+				return null;
+		
+		
 	}
 	
 	public void cancelar(Long id) {
@@ -39,9 +46,9 @@ public class ReservationServer {
 		}*/
 	}
 	
-	public Reservation alterarReserva(Reservation reservation, Long id) {
+	public Reservation alterarReserva(Long id, Reservation obj) {
 		Reservation entity = repo.getOne(id);
-		updateData (entity,reservation);
+		updateData (entity,obj);
 		return repo.save(entity);
 		
 	}
@@ -50,6 +57,8 @@ public class ReservationServer {
 		entity.setChecout(reservation.getChecout());
 		entity.setRoomNumber(reservation.getRoomNumber());
 	}
+
+	
 	
 
 }
